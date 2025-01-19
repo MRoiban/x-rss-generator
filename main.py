@@ -24,7 +24,6 @@ try:
 except ImportError:
     def chat(prompt):
         """Fallback for openllm.chat if not installed."""
-        
         return "Sample Title"
 
 
