@@ -13,7 +13,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from feedgen.feed import FeedGenerator
 from datetime import datetime
+from dotenv import load_dotenv, dotenv_values
 
+load_dotenv('./.env')
+env = dotenv_values()
 # If you're actually using openllm's chat, keep it.
 # For a stand-alone script, you might just omit this or mock it out.
 try:
@@ -31,11 +34,11 @@ except ImportError:
 
 USE_SAFARI = True  # Toggle True to use Safari (non-headless), or False to use headless Chrome
 
-USERNAME = "..."
-PASSWORD = "..."
 
-# List of profiles to scrape
-profiles = ["..."]  # Replace with actual profile handles
+USERNAME = env['USERNAME']
+PASSWORD = env['PASSWORD']
+
+profiles = env['PROFILES'].split(',')  # Replace with actual profile handles
 
 # Path to save cookies
 COOKIES_FILE = "x_cookies.pkl"
