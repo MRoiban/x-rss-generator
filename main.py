@@ -32,14 +32,9 @@ USE_SAFARI = True
 
 USERNAME = env['USERNAME']
 PASSWORD = env['PASSWORD']
-
 profiles = env['PROFILES'].split(',')  
-
-
-COOKIES_FILE = "x_cookies.pkl"
-
-
-RSS_OUTPUT_DIR = "/Users/stellar/Documents/Projects/MRoiban.github.io/rss"
+COOKIES_FILE = env['COOKIES_PATH']
+RSS_OUTPUT_DIR = env['RSS_PATH']
 
 
 TWEETS_PER_PROFILE = 100
